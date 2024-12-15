@@ -1,9 +1,0 @@
-.layout {
-    display: grid;
-    grid-template-columns: minmax(16px, auto) minmax(288px, 1200px)
-  minmax(16px, auto);
-    grid-template-areas:
-    ". header ."
-    ". slider ."
-    ". content .";
-}

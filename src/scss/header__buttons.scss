@@ -1,0 +1,29 @@
+.header__buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.header__buttons button {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  outline: none;
+}
+
+.header__buttons__shopBag {
+  position: relative;
+}
+
+
+.cart-count {
+    position: absolute;
+    bottom: 0;
+    right: -5px;
+    background-color: red;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    color: white;
+    font-size: 10px;
+    padding-top: 1px;
+}

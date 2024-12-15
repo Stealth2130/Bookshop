@@ -1,0 +1,51 @@
+@import "./variables.scss";
+@import "./layout.scss";
+@import "./header.scss";
+@import "./slider.scss";
+@import "./content.scss";
+@import "./main.scss";
+
+a,
+button {
+  cursor: pointer;
+}
+
+html {
+  height: 100vh;
+  width: 100vw;
+  font-family: "Monseratt", sans-serif;
+  ::-webkit-scrollbar {
+  width: 0;
+}
+}
+
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+@media (min-width: 1200px) {
+  /* Большие экраны */
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* Небольшие ноутбуки, умные дисплеи и так далее */
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Большие планшеты или небольшие лэптопы */
+}
+@media (min-width: 480px) and (max-width: 767px) {
+  /* Небольшие планшеты или некоторые смартфоны */
+}
+@media (min-width: 320px) and (max-width: 479px) {
+  /* Смартфоны */
+}
+@media (max-width: 320px) {
+  /* Самые маленькие разрешения экранов на смартфонах */
+}

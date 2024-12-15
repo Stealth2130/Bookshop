@@ -1,0 +1,25 @@
+.layout {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  display: grid;
+  grid-template-columns:
+    minmax(5vw, auto) minmax(288px, 1120px)
+    minmax(5vw, auto);
+  //grid-template-rows: 14vh 57vh 1fr;
+  grid-template-areas:
+    ". header ."
+    ". main ."
+    "content content .";
+  position: relative;
+}
+
+@media (max-width: 479px) {
+
+  .layout {
+    grid-template-columns: 5vw 90vw 5vw;
+     grid-template-areas:
+     ". header ."
+       ". main ."
+    "content content .";
+  }
+}

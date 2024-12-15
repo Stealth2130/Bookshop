@@ -1,0 +1,48 @@
+@import "./header__buttons.scss";
+@import "./header__menu.scss";
+@import "./header__logo.scss";
+@import "./header__burger-menu.scss";
+@import "./variables.scss";
+
+
+.header {
+  grid-area: header;
+  position: sticky;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 12vh;
+  font-family: "Monsterrat";
+  font-weight: bold;
+  z-index: 5;
+  text-shadow: 0px 25px 12px -10px rgba(57, 56, 56, 0.15);
+}
+
+.header__hamburger_menu {
+  display: none;
+}
+
+.header__hamburger_menu-line {
+  width: 30px;
+  height: 3px;
+  background-color: $marker;
+  margin: 5px;
+}
+
+
+@media (max-width: 767px) {
+  .header__hamburger_menu {
+    display: block;
+    // position: absolute;
+    right: 0;
+  }
+  .header__menu {
+    display: none;
+  }
+  .header__buttons {
+    gap: 25px;
+  }
+}

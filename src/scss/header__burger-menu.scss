@@ -1,0 +1,57 @@
+@import "./variables.scss";
+
+.header__popup {
+  padding-top: 86px;
+  padding-bottom: 30px;
+  position: fixed;
+  left: -100%;
+  width: 55%;
+  height: 100%;
+  background-color: $light-grey;
+  z-index: 10;
+  display: block;
+  transition: 0.3s;
+  overflow-y: auto;
+}
+.header__popup.open {
+  left: 0;
+}
+.popup__menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50vh;
+  &>ul {
+    list-style: none;
+    padding: 10px;
+  }
+}
+
+
+
+.popup__menu > ul > li {
+  width: 100%;
+}
+.popup__menu > ul > li > a {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  font-weight: bold;
+}
+.header__hamburger_menu.active .header__hamburger_menu-line:nth-child(2) {
+  opacity: 0;
+}
+.header__hamburger_menu.active .header__hamburger_menu-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.header__hamburger_menu.active .header__hamburger_menu-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+
+
+
+

@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <link rel="stylesheet" href="css/main.css">
-
-
-
-
+    <link rel="stylesheet" href="output/main.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,10 +16,10 @@
   </head>
   <body class="layout">
     <header class="header">
-      <span class="header__logo">BOOKSHOP</span>
-      <nav class="header__menu">
+      <a class="header__logo" href="#">Bookshop</a>
+      <nav class="header__menu" id="header__menu">
         <ul>
-          <li class="header__menu__item">
+          <li class="header__menu__item active">
             <a href="#">BOOKS</a>
           </li>
           <li class="header__menu__item">
@@ -39,36 +35,78 @@
       </nav>
       <div class="header__buttons">
         <button class="header__buttons__user">
-          <img src="images/svg/user.svg" alt="user" />
+          <img src="src/images/svg/user.svg" alt="user" />
         </button>
         <button class="header__buttons__search">
-          <img src="images/svg/search.svg" alt="search" />
+          <img src="src/images/svg/search.svg" alt="search" />
         </button>
         <button class="header__buttons__shopBag">
-          <img src="images/svg/shop bag.svg" alt="shop bag" />
+          <img src="src/images/svg/shop bag.svg" alt="shop bag" />
+          <div class="cart-count">0</div>
         </button>
       </div>
+      <div class="header__hamburger_menu">
+        <div class="header__hamburger_menu-line"></div>
+        <div class="header__hamburger_menu-line"></div>
+        <div class="header__hamburger_menu-line"></div>
+      </div>
+      <div class="header__popup" id="header__popup"></div>
     </header>
-    <main class="content">
-      <div class="content__slider"></div>
-      <div class="content__category"></div>
-      <section class="content__bookcards">
-        <article class="bookcard">
-          <div class="article__image">
-            <img src="" alt="Article name" />
+    <main class="main">
+      <section class="main__slider">
+        <div class="main__slider-image">
+          <div class="main__slider-arrows">
+            <div class="main__slider-arrow left">&#9668;</div>
+            <div class="main__slider-arrow right">&#9658;</div>
           </div>
-          <div class="bookcard__body">
-            <p class="bookcard__author"></p>
-            <h1 class="bookcard__name"></h1>
-            <p class="bookcard__rating"></p>
-            <p class="bookcard__description"></p>
-            <p class="bookcard__price"></p>
-            <button class=""></button>
-          </div>
-        </article>
-        <button class="btn"></button>
+        </div>
+        <div class="main__slider-link one">
+          <a
+            >CHANGE OLD BOOK ON NEW
+            <img
+              class="arrow"
+              src="src/images/svg/arrow.svg"
+              alt="стрелка вправо"
+            />
+          </a>
+        </div>
+        <div class="main__slider-link two">
+          <a
+            >TOP 100 BOOKS 2022
+            <img
+              class="arrow"
+              src="src/images/svg/arrow.svg"
+              alt="стрелка вправо"
+            />
+          </a>
+        </div>
+      </section>
+
+      <section class="main__content">
+        <div class="main__content-categories">
+          <ul>
+            <li class="main__content-categories-link active">Architecture</li>
+            <li class="main__content-categories-link">Art & Fashion</li>
+            <li class="main__content-categories-link">Biography</li>
+            <li class="main__content-categories-link">Business</li>
+            <li class="main__content-categories-link">Crafts & Hobbies</li>
+            <li class="main__content-categories-link">Drama</li>
+            <li class="main__content-categories-link">Fiction</li>
+            <li class="main__content-categories-link">Food & Drink</li>
+            <li class="main__content-categories-link">Health & Wellbeing</li>
+            <li class="main__content-categories-link">History & Politics</li>
+            <li class="main__content-categories-link">Humor</li>
+            <li class="main__content-categories-link">Poetry</li>
+            <li class="main__content-categories-link">Psychology</li>
+            <li class="main__content-categories-link">Science</li>
+            <li class="main__content-categories-link">Technology</li>
+            <li class="main__content-categories-link">Travel & Maps</li>
+          </ul>
+        </div>
+        <div class="main__content-books"></div>
+        <button class="main__content-button btn-more">LOAD MORE</button>
       </section>
     </main>
-    <footer class="footer"></footer>
+    <script src="output/main.js"></script>
   </body>
 </html>

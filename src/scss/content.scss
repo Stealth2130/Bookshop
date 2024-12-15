@@ -1,0 +1,235 @@
+@import "./variables.scss";
+
+.main__content {
+  grid-area: content;
+  margin-top: 16vh;
+  position: relative;
+  display: grid;
+  grid-template-areas:
+    "categories books"
+    " . button";
+  gap: 26px;
+  .main__content-button.btn-more {
+    grid-area: button;
+    margin-top: 80px;
+  }
+  margin-bottom: 30px;
+}
+
+.main__content-categories {
+  height: 710px;
+  width: 416px;
+  background-color: $light-grey;
+  padding: 45px 165px 81px;
+  box-sizing: border-box;
+  margin-left: -165px;
+  grid-area: categories;
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 26px;
+    flex-direction: column;
+    font-size: 12px;
+    text-align: left;
+    white-space: nowrap;
+    li {
+      cursor: pointer;
+    }
+  }
+}
+
+.main__content-categories-link.active {
+  font-size: 16px;
+  font-weight: bold;
+  list-style-type: disc;
+  &::marker {
+    color: $marker;
+  }
+}
+
+.main__content-books {
+  grid-area: books;
+  display: grid;
+  grid-template-columns: 424px 424px;
+  grid-auto-rows: 300px;
+  margin-left: -90px;
+  margin-top: 46px;
+  column-gap: 76px;
+  row-gap: 96px;
+  flex-wrap: wrap;
+}
+
+.bookcard {
+  height: 300px;
+  width: 424px;
+  display: flex;
+  gap: 36px;
+  font-size: 10px;
+  vertical-align: middle;
+
+  .bookcard__image img {
+    height: 300px;
+    width: 212px;
+    box-shadow: 0px 25px 12px -10px rgba(57, 56, 56, 0.15);
+  }
+
+  .bookcard__body {
+    margin: auto;
+    height: 204px;
+    width: 176px;
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .bookcard__title {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 4px 0;
+    }
+    .bookcard__description {
+      // height: 38px;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-transform: capitalize;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      line-clamp: 3;
+      box-orient: vertical;
+    }
+    .bookcard__price {
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .btn--buy {
+      margin-top: 16px;
+    }
+  }
+}
+
+.main__content-button {
+  height: 45px;
+  width: 176px;
+  border: 1px solid $btn;
+  box-sizing: content-box;
+  font-size: 8px;
+  color: $btn;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+@media (min-width: 781px) and (max-width: 1199px) {
+  /* Небольшие ноутбуки, умные дисплеи и так далее */
+  /* Большие планшеты или небольшие лэптопы */
+  .main__content-books {
+    grid-template-columns: 424px;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 780px) {
+  /* Небольшие планшеты или некоторые смартфоны */
+  .main__content {
+    gap: 16px;
+    margin-top: 10vh;
+    .main__content-books {
+      grid-template-columns: 296px;
+      gap: 15px;
+      grid-auto-rows: 250px;
+      .bookcard {
+        gap: 15px;
+        height: 210px;
+        width: 296px;
+        .bookcard__image img {
+          height: 210px;
+          width: 148px;
+        }
+        .bookcard__body {
+          margin: auto;
+          height: 204px;
+          width: 176px;
+          .bookcard__title {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    .main__content-categories {
+      height: 568px;
+      width: 332px;
+      padding: 31px 65px 57px;
+      margin-left: -65px;
+      ul {
+        gap: 14px;
+        font-size: 12px;
+      }
+    }
+
+    .main__content-button {
+      height: 31px;
+      width: 123px;
+      font-size: 8px;
+    }
+  }
+}
+
+
+@media (max-width: 480px) {
+ .main__content {
+    gap: 16px;
+    margin-top: 5vh;
+    .main__content-books {
+      grid-template-columns: 180px;
+      gap: 15px;
+      grid-auto-rows: 162px;
+      margin-left: -55px;
+      margin-top: 20px;
+      .bookcard {
+        font-size: 10px;
+        gap: 10px;
+        height: 115px;
+          width: 80px;
+        .bookcard__image img {
+          height: 115px;
+          width: 80px;
+        }
+        .bookcard__body {
+          margin: auto;
+          height: 115px;
+          width: 80px;
+          .bookcard__title {
+            font-size: 10px;
+          }
+          .bookcard__author {
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    .main__content-categories {
+      height: 476px;
+      width: 220px;
+      padding: 5px 65px 57px;
+      margin-left: -25px;
+      ul {
+        gap: 14px;
+        font-size: 12px;
+        padding: 0;
+        margin-left: -15px;
+      }
+    }
+
+    .main__content-button {
+      height: 35px;
+      width: 68px;
+      font-size: 8px;
+      &.btn-more {
+        margin-top: 0px;
+      }
+    }
+  }
+}

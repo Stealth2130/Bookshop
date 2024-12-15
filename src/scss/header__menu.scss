@@ -1,0 +1,26 @@
+@import "variables.scss";
+
+.header__menu {
+  width: 372px;
+}
+
+.header__menu > ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+
+.header__menu__item.active a{
+  color: $main-black;
+  font-weight: 900;
+}
+
+.header__menu a {
+  font-size: 10px;
+  color: $main-gray;
+}
+
