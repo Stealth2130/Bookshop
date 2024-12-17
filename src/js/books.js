@@ -7,11 +7,13 @@ let activeCategory = document.querySelector(
 ).innerText;
 
 const cartStorage = JSON.parse(localStorage.getItem("cart") ?? "[]");
-
+document.querySelector(".cart-count").textContent = cartStorage.length;
 const contentWrapper = document.querySelector(".main__content");
 const btnMore = contentWrapper.querySelector(
   ".main__content-button.btn-more"
 );
+
+
 
 const getBooks = (subject, startPage, countBooks) => {
   return fetch(
@@ -64,16 +66,18 @@ const showBooks = async () => {
                 <span class="bookcard__price-amount">${price}</span>
               </div>
               <button class="main__content-button btn--buy" data-id="${book.id}">${
-      cartStorage.includes(book.id) ? "IN THE CARD" : "BUY NOW"
+      cartStorage.includes(book.id) ? "IN THE CART" : "BUY NOW"
     }</button>
             </div>
           </article>
     `;
     document.querySelector(".main__content-books").innerHTML += newBook;
+    // document.querySelector(".cart-count").textContent = cartStorage.length;
   });
 };
 
 showBooks();
+
 
 //корзина
 document.addEventListener("click", function (event) {
@@ -84,9 +88,9 @@ document.addEventListener("click", function (event) {
       event.target.innerText = "BUY NOW";
     } else {
       cartStorage.push(id);
-      event.target.innerText = "IN THE CARD";
+      event.target.innerText = "IN THE CART";
     }
-    localStorage.setItem("card", JSON.stringify(cartStorage));
+    localStorage.setItem("cart", JSON.stringify(cartStorage));
     document.querySelector(".cart-count").textContent = cartStorage.length;
   }
 });
