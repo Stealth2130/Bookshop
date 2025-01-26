@@ -4,57 +4,6 @@ const images = [
   { url: "./src/images/png/bannerThree.png" },
 ];
 
-// const image = document.querySelector(".main__slider-image");
-// const points = document.querySelector(".main__slider-points");
-// let currentIndex = 0;
-
-// const initElementSlider = () => {
-//   images.forEach((image, index) => {
-//     points.innerHTML += `<div class="main__slider-points-item ${
-//       index === 0 ? "active" : ""
-//     }" data-index="${index}"></div>`;
-//   });
-// };
-
-// const changeActiveElement = () => {
-//   document
-//     .querySelector(".main__slider-points-item.active")
-//     .classList.remove("active");
-//   document
-//     .querySelector(`.main__slider-points-item[data-index="${currentIndex}"]`)
-//     .classList.add("active");
-// };
-
-// const setObject = () => {
-//   image.style.backgroundImage = `url(${images[currentIndex].url})`;
-// };
-
-// document.addEventListener("click", (event) => {
-//   if (event.target.classList.contains("main__slider-points-item")) {
-//     clearInterval(slider);
-//     currentIndex = event.target.getAttribute("data-index");
-//     setObject();
-//     changeActiveElement();
-//     console.log(`Щелк! тек.индекс ${currentIndex} длина ${images.length}`);
-//     slider
-//   }
-// });
-
-// const changeImg = () => {
-//   if (currentIndex == 0 || currentIndex < images.length - 1) {
-//     currentIndex += 1;
-//   } else {
-//     currentIndex = 0;
-//   }
-//   // setTimeout(changeImg, 5000);
-//   setObject();
-//   changeActiveElement();
-//   console.log(`тек.индекс ${currentIndex} длина ${images.length}`);
-// };
-
-// initElementSlider();
-// setObject();
-// let slider = setInterval(changeImg, 2000);
 
 function initSlider(images, options) {
   if (!images || !images.length) return;
@@ -159,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
     dots: true,
     autoplay: true,
     autoplayInterval: 5000,
-    arrows: false,
+    arrows: true,
   };
 
   initSlider(images, sliderOptions);
